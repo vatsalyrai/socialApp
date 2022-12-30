@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const PORT = 4000 || process.env.PORT
+const PORT = 4000 || process.env.PORT;
 const format = require("date-format");
 const req = require('express/lib/request');
 const { json } = require('express/lib/response');
