@@ -5,6 +5,17 @@ const format = require("date-format");
 const req = require('express/lib/request');
 const { json } = require('express/lib/response');
 
+// Swagger odcs related
+//const express = require('express');
+//const app = express();
+const YAML = require('yamljs')
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = YAML.load('./swagger.yaml');// using yaml extension instead of json
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+
+
 app.get("/",(req , res) => {
 
     res.status(201).send("<h1>Hello World</h1>")
